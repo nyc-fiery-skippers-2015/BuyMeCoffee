@@ -17,7 +17,7 @@
   <body>
       <div ng-controller='MapCtrl'>
         <map center="40.7245, -74.0289" zoom="12" style="width:500px;height:500px">
-            <marker position="{{[marker.lat,marker.lng]}}" ng-repeat='marker in markers' title="Hello World!"></marker>
+            <marker position="{{[marker.lat,marker.lng]}}" ng-repeat='marker in markers' title="Hello World!" ng-mouseover='infoWindow()'></marker>
         </map>
       </div>
   </body>

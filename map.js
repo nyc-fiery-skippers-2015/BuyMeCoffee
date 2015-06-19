@@ -14,6 +14,12 @@ app.controller('MapCtrl', function($scope, $firebaseArray){
     });
   };
 
+  $scope.infoWindow = function(){
+    var infowindow = new google.maps.InfoWindow()
+    infowindow.setContent()
+    infowindow.open($scope.map, this)
+  };
+
   function addMarkers(position){
     if(position){
       $scope.markers.$add({lat: position.coords.latitude + '',lng: position.coords.longitude + ''});
