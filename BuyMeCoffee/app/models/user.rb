@@ -3,4 +3,9 @@ class User < ActiveRecord::Base
   belongs_to :review
   has_many :reviews, foreign_key: 'author_id'
 
+
+  def self.online_users
+    User.includes(:categories).where(status: true)
+  end
+
 end
