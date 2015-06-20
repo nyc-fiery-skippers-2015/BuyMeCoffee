@@ -98,7 +98,7 @@ describe UsersController do
     it 'doesnt change the attr if its invalid' do
       expect{
         patch :update, id: user.id, user: {name: nil}
-      }not_to change { user.reload }
+      }.not_to change { user.reload }
     end
   end
 
