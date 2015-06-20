@@ -1,0 +1,14 @@
+<%= form_for(@user) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, value: @user.name %>
+
+  <%= f.label :about %>
+  <%= f.text_field :about, value: @user.about %>
+
+  <%= f.label :pic_loc %>
+  <%= f.text_field :pic_loc, value: @user.pic_loc %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email, value: @user.email %>
+<% end %>

@@ -1,0 +1,9 @@
+<div class="userShow">
+  <h2><%= @user.name %></h2>
+  <img src="<%= @user.pic_loc %>" alt="image of the user">
+  <p><%= @user.about %></p>
+
+  <%= categories.each do |cat| %>
+      <p><%= cat %></p>
+  <% end %>
+</div>
