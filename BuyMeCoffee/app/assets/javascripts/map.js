@@ -22,7 +22,11 @@ app.controller('MapCtrl', function($scope, $firebaseArray){
   };
 });
 
-app.controller('LoginController', function($http, $scope){
+app.controller('LoginController', function($http, $scope, $firebaseArray){
+
+  var dbMarkers = $firebaseArray(myBase)
+  $scope.markers = dbMarkers;
+
   $scope.loginForm = function(){
     $http.get('/login').success(function(data){
       $('.this-form').append(data);
@@ -32,5 +36,21 @@ app.controller('LoginController', function($http, $scope){
 
   $scope.hideForm = function(){
     document.getElementById('abc').style.display = "none";
+    getLocation()
   }
+
+  $scope.getLocation = function(){
+      debugger
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log(position)
+      addMarkers(position)
+    });
+  };
+
+  function addMarkers(position){
+    if(position){
+      $scope.markers.$add({lat: position.coords.latitude + '',lng: position.coords.longitude + ''});
+      $scope.markers.$save();
+    }
+  };
 });
