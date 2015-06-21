@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  $('#popup').on('click', popForm);
-  $('.userShow').on('click','#submit', hideForm);
+  $('.popup').on('click', popForm);
+  $('#submit').on('click', hideForm);
 });
 
 var hideForm = function(event){
