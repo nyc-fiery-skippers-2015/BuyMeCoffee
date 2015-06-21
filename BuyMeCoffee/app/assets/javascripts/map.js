@@ -20,5 +20,17 @@ app.controller('MapCtrl', function($scope, $firebaseArray){
       $scope.markers.$save();
     }
   };
+});
 
+app.controller('LoginController', function($http, $scope){
+  $scope.loginForm = function(){
+    $http.get('/login').success(function(data){
+      $('.this-form').append(data);
+      document.getElementById('abc').style.display = "block";
+    });
+  };
+
+  $scope.hideForm = function(){
+    document.getElementById('abc').style.display = "none";
+  }
 });

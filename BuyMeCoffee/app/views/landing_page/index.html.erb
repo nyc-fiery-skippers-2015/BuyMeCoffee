@@ -1,10 +1,10 @@
-
 <%= render 'map'%>
 
 <%=render 'user_cards'%>
-<div id="abc">
+<div class="this-form"></div>
+<div style='display:none'>
   <div id="popupContact">
-    <form class='invite' action="#" method="post" data-id=<%= @user.id %> name="form">
+    <form class='invite' action="#" method="post"name="form">
       <h2>Invite</h2>
       <hr>
       <textarea id="msg" name="message" placeholder="Type Question Here!!!"></textarea>
@@ -12,3 +12,4 @@
     </form>
   </div>
 </div>
+}
