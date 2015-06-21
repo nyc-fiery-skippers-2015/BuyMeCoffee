@@ -334,6 +334,17 @@ header.navigation {
   }
 }
 
+#map{
+  padding-top: 20px;
+  @include span-columns(8 of 12);
+  @include shift(1);
+
+}
+#cards{
+@include shift(6);
+
+
+}
 
 #map_canvas {
 
@@ -368,7 +379,7 @@ header.navigation {
 }
 
 .card {
-
+   max-width: 140px;
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
   $base-background-color: white !default;
@@ -399,8 +410,8 @@ header.navigation {
 
   .card-image {
     overflow: hidden;
-    height: 300px;
-    max-height: 650px;
+    height: 140px;
+    max-height: 140px;
     background-color: $card-image-hover-color;
 
     img {
