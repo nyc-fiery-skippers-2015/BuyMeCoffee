@@ -1,34 +1,36 @@
-<div>
-  <section id = "map" >
-    <%= render 'map'%>
-  </section>
-</div>
+<div class="par">
+  <div>
+    <section id = "map" >
+      <%= render 'map'%>
+    </section>
+  </div>
 
-<div id="users">
-  <%= render @users %>
-</div>
-<%= will_paginate @users %>
-
-
-<div class="this-form"></div>
+  <div id="users">
+    <%= render @users %>
+  </div>
+  <%= will_paginate @users %>
 
 
-<div id='abc1'>
-  <div id="popupContact">
-    <form class='invite' action="/invitations" method="post" name="form">
-      <h2>Invite</h2>
-      <hr>
-      <textarea name="invitation[question]" placeholder="Type Question Here!!!"></textarea>
-      <select name='invitation[agreed_time]'>
-        <option value="<%=(Time.now + 1800).strftime("%I:%M:%S")%>"><%=(Time.now + 1800).strftime("%I:%M")%></option>
-        <option value="<%=(Time.now + 2700).strftime("%I:%M:%S")%>"><%=(Time.now + 2700).strftime("%I:%M")%></option>
-        <option value="<%=(Time.now + 3600).strftime("%I:%M:%S")%>"><%=(Time.now + 3600).strftime("%I:%M")%></option>
-        <option value="<%=(Time.now + 4500).strftime("%I:%M:%S")%>"><%=(Time.now + 4500).strftime("%I:%M")%></option>
-      </select>
-      <input style='width:100%;bottom:20px' name='invitation[location]' ng-model="chosenPlace" googleplace value='{{chosenPlace}}'/>
-      <input class='user' name='invitation[mentor_id]' type='hidden' value=''/>
-      <input id='submit' type='submit' value='Send Invite!' />
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-    </form>
+  <div class="this-form"></div>
+
+
+  <div id='abc1'>
+    <div id="popupContact">
+      <form class='invite' action="/invitations" method="post" name="form">
+        <h2>Invite</h2>
+        <hr>
+        <textarea name="invitation[question]" placeholder="Type Question Here!!!"></textarea>
+        <select name='invitation[agreed_time]'>
+          <option value="<%=(Time.now + 1800).strftime("%I:%M:%S")%>"><%=(Time.now + 1800).strftime("%I:%M")%></option>
+          <option value="<%=(Time.now + 2700).strftime("%I:%M:%S")%>"><%=(Time.now + 2700).strftime("%I:%M")%></option>
+          <option value="<%=(Time.now + 3600).strftime("%I:%M:%S")%>"><%=(Time.now + 3600).strftime("%I:%M")%></option>
+          <option value="<%=(Time.now + 4500).strftime("%I:%M:%S")%>"><%=(Time.now + 4500).strftime("%I:%M")%></option>
+        </select>
+        <input style='width:100%;bottom:20px' name='invitation[location]' ng-model="chosenPlace" googleplace value='{{chosenPlace}}'/>
+        <input class='user' name='invitation[mentor_id]' type='hidden' value=''/>
+        <input id='submit' type='submit' value='Send Invite!' />
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+      </form>
+    </div>
   </div>
 </div>
