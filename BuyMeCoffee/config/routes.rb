@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users
-  resources :invitations, only: [:create, :update]
+  resources :invitations, only: [:create, :update, :index]
 
   get 'welcome/index'
   get 'search', to:'welcome#search', as: :search

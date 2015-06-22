@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    @user =User.new
+    @user = User.new
     render :new, layout: false
   end
 

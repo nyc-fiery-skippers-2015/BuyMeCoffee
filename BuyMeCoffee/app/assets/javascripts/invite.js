@@ -2,7 +2,23 @@ $(document).ready(function(){
   $('.popup').on('click', popForm);
   $('.this-form').on('submit','.invite', getUserLocation);
   // $('.invite').on('submit', hideForm);
+  $('#login').on('click', loginForm);
 });
+
+var loginForm = function(event){
+  event.preventDefault();
+  $target = $(event.target);
+
+  $.ajax({
+    url: '/login',
+    method: 'get'
+
+  }).done(function(response){
+    $('.this-form').append(response)
+  }).fail(function(error){
+    console.log(error)
+  })
+}
 
 var savePos = function(user, position){
   var myData = user + '&' + $.param(position.coords)
@@ -45,5 +61,5 @@ var hideForm = function(event){
 
 var popForm = function(event){
   event.preventDefault();
-  document.getElementById('abc').style.display = "block";
+  document.getElementById('abc1').style.display = "block";
 }

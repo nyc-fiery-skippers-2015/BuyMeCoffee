@@ -1,6 +1,4 @@
-var app = angular.module('AngularMaps', ["ngMap", "firebase"]);
-
-var myBase = new Firebase('https://incandescent-torch-1712.firebaseio.com')
+var app = angular.module('AngularMaps', ["ngMap"]);
 
 app.directive('googleplace', function() {
   return {
@@ -21,30 +19,20 @@ app.directive('googleplace', function() {
   };
 });
 
-app.controller('MapCtrl', function($scope, $firebaseArray){
+app.controller('MapCtrl', function($http, $scope){
 
-  $scope.markers = dbMarkers;
+  $scope.markers = [];
 
-  // function addMarkers(position){
-  //   if(position){
-  //     $scope.markers.$add({lat: position.coords.latitude + '',lng: position.coords.longitude + ''});
-  //     $scope.markers.$save();
-  //   }
-  // };
-});
-
-app.controller('LoginController', function($http, $scope, $firebaseArray){
-
-  var dbMarkers = $firebaseArray(myBase)
-  $scope.markers = dbMarkers;
-
-  $scope.loginForm = function(){
-    $http.get('/login').success(function(data){
-      $('.this-form').append(data);
-      document.getElementById('abc').style.display = "block";
+  function addMarkers(){
+    $http.get('/users').success(function(data){
+      debugger
+      if(data){
+        for(var i=0; i<data.length; i++){
+          // $scope.markers.push([{lat: data[i].latitude,lng: data[i].longitude}]);
+        }
+      }
     });
   };
-    document.getElementById('abc').style.display = "none";
-
-
+  // setInterval(addMarkers, 2000);
+  // addMarkers();
 });
