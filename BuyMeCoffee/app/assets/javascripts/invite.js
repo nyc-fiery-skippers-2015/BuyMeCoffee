@@ -1,11 +1,21 @@
 $(document).ready(function(){
   $('.popup').on('click', popForm);
-  $('#submit').on('click', hideForm);
+  // $('.invite').on('submit', hideForm);
 });
 
 var hideForm = function(event){
   event.preventDefault();
-  document.getElementById('abc').style.display = "none";
+  var $target = $(event.target);
+
+  $.ajax({
+    url: '/invitations',
+    method: 'post',
+    data: $target.serialize()
+  }).done(function(response){
+    document.getElementById('abc').style.display = "none";
+  }).fail(function(error){
+    console.log(error)
+  })
 }
 
 var popForm = function(event){
