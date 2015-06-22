@@ -23,14 +23,7 @@ app.directive('googleplace', function() {
 
 app.controller('MapCtrl', function($scope, $firebaseArray){
 
-  var dbMarkers = $firebaseArray(myBase)
   $scope.markers = dbMarkers;
-  // $scope.getLocation = function(){
-  //   navigator.geolocation.getCurrentPosition(function(position) {
-  //     console.log(position)
-  //     addMarkers(position)
-  //   });
-  // };
 
   // function addMarkers(position){
   //   if(position){
