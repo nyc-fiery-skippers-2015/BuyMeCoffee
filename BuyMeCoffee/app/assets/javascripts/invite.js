@@ -61,5 +61,7 @@ var hideForm = function(event){
 
 var popForm = function(event){
   event.preventDefault();
+  $target = $(event.target);
+  $('.user').val($target.attr('id'))
   document.getElementById('abc1').style.display = "block";
 }
