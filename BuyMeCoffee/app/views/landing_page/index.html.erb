@@ -1,13 +1,16 @@
 
+
 <div ng-controller='MapCtrl'>
   <section id = "map" >
   <%= render 'map'%>
   </section>
 </div>
 
-<section id ="cards">
-<%=render 'user_cards'%>
-</section>
+<div id="users">
+<%= render @users %>
+<%= will_paginate @users %>
+</div>
+
 <div class="this-form"></div>
 <div id='abc'>
   <div id="popupContact">
@@ -27,4 +30,5 @@
   </div>
 </div>
 }
+
 
