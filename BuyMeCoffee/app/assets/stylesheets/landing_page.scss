@@ -4,14 +4,11 @@
   padding-top: 20px;
 
   @include span-columns(10 of 12);
+@inlcude outer-container();
 
 
 }
-#users{
-@include shift(1);
-@include span-columns(4 of 12);
 
-}
 
 #map_canvas {
 
