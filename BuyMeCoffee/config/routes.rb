@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :invitations, only: [:create, :update, :index]
 
   get 'welcome/index'
+  get '/users/:id/card' => 'users#card'
   get 'search', to:'welcome#search', as: :search
   get 'login', to: 'sessions#new', as: :login
   post 'login' => 'sessions#create'

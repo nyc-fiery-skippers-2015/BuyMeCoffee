@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.popup').on('click', popForm);
+  $('map').on('click','.popup', popForm);
   $('.this-form').on('submit','.invite', getUserLocation);
   // $('.invite').on('submit', hideForm);
   $('#login').on('click', loginForm);
