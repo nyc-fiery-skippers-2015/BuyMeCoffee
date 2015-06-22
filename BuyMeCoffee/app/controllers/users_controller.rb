@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.online_users
+    if request.xhr?
+      @users = User.online_users
+      byebug
+    else
+      @users = User.online_users
+    end
   end
 
   def show

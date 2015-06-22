@@ -1,8 +1,6 @@
-
-
-<div ng-controller='MapCtrl'>
+<div>
   <section id = "map" >
-  <%= render 'map'%>
+    <%= render 'map'%>
   </section>
 </div>
 
@@ -13,7 +11,7 @@
 
 
 <div class="this-form"> </div>
-<div id='abc'>
+<div id='abc1'>
   <div id="popupContact">
     <form class='invite' action="/invitations" method="post" name="form">
       <h2>Invite</h2>
@@ -25,6 +23,7 @@
         <option value="<%=(Time.now + 3600).strftime("%I:%M:%S")%>"><%=(Time.now + 3600).strftime("%I:%M")%></option>
         <option value="<%=(Time.now + 4500).strftime("%I:%M:%S")%>"><%=(Time.now + 4500).strftime("%I:%M")%></option>
       </select>
+      <input style='width:100%;bottom:20px' name='invitation[location]' ng-model="chosenPlace" googleplace value='{{chosenPlace}}'/>
       <input id='submit' type='submit' value='Send Invite!' />
       <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
     </form>

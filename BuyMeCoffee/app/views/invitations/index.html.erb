@@ -1,0 +1,7 @@
+<% @invitations.each do |invitation| %>
+  <div>
+    <div><%= invitation.agreed_time %></div>
+    <div><%= invitation.location %></div>
+    <div><button>Accept</button></div>
+  </div>
+<% end %>
