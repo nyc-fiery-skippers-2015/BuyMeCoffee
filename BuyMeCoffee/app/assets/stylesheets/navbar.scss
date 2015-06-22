@@ -1,11 +1,10 @@
 #cupnav{
- @include span-columns(12 of 12);
+ @include span-columns(8 of 12);
 }
 
 #navbutton{
   background-color: white;
 }
-
 
 .sliding-panel-content {
   $action-color: #477DCA !default;
