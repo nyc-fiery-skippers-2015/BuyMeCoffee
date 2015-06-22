@@ -3,7 +3,24 @@ $(document).ready(function(){
   $('.this-form').on('submit','.invite', getUserLocation);
   // $('.invite').on('submit', hideForm);
   $('#login').on('click', loginForm);
+  $('.par').on('click', '.inv-accept', acceptInvite);
 });
+
+var acceptInvite = function(event){
+  event.preventDefault();
+  $target = $(event.target);
+  var id = $target.data('id');
+
+  $.ajax({
+    url: '/invitations/' + id,
+    method: 'put'
+
+  }).done(function(response){
+    location.reload()
+  }).fail(function(error){
+    console.log(error)
+  })
+}
 
 var loginForm = function(event){
   event.preventDefault();

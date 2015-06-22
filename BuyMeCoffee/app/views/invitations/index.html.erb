@@ -24,9 +24,9 @@
       <% invitations.each do |invitation| %>
         <p><%= invitation.agreed_time %> <br>
         <%= invitation.location %>
-      </P>
-        <button>Accept</button>
-        <% end %>
+      </p>
+        <button class='inv-accept' data-id='<%= invitation.id %>'>Accept</button>
+      <% end %>
     </div>
   </div>
 </div>
