@@ -2,6 +2,9 @@ class InvitationsController < ApplicationController
 
   def index
     @invitations = Invitation.where(mentor_id: session[:user_id])
+    by
+    @sent = Invitation.where(user_id: session[:user_id])
+    render :index, locals:{invitations:@invitations, sent:@sent} , layout: false
   end
 
   def create
