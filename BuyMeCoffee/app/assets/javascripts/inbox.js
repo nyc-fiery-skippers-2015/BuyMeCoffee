@@ -12,7 +12,6 @@ var inbox = function(event){
     method: 'get'
 
   }).done(function(response){
-    debugger
     $('.this-form').append(response)
   }).fail(function(error){
     console.log(error)
