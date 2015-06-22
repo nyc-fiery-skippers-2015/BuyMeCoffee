@@ -3,7 +3,36 @@ $(document).ready(function(){
   $('.this-form').on('submit','.invite', getUserLocation);
   // $('.invite').on('submit', hideForm);
   $('#login').on('click', loginForm);
+  $('.par').on('click', '.inv-accept', acceptInvite);
+  $('.par').on('click', '#accepted', acceptedInvites);
+  $('.par').on('click', '#sent', sentInvites);
 });
+
+var sentInvites = function(event){
+  document.getElementById('invites').style.display = 'block';
+  document.getElementById('appoints').style.display = 'none';
+}
+
+var acceptedInvites = function(event){
+  document.getElementById('invites').style.display = 'none';
+  document.getElementById('appoints').style.display = 'block';
+}
+
+var acceptInvite = function(event){
+  event.preventDefault();
+  $target = $(event.target);
+  var id = $target.data('id');
+
+  $.ajax({
+    url: '/invitations/' + id,
+    method: 'put'
+
+  }).done(function(response){
+    location.reload()
+  }).fail(function(error){
+    console.log(error)
+  })
+}
 
 var loginForm = function(event){
   event.preventDefault();

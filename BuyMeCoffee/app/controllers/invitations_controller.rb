@@ -1,10 +1,12 @@
 class InvitationsController < ApplicationController
 
   def index
-    @invitations = Invitation.where(mentor_id: session[:user_id])
-
+    @invitations = Invitation.where(mentor_id: session[:user_id], status: false)
+    accepted = Invitation.where(mentor_id: session[:user_id], status: true)
+    sent_accepted = Invitation.where(user_id: session[:user_id], status: true)
+    @appointments = accepted + sent_accepted
     @sent = Invitation.where(user_id: session[:user_id])
-    render :index, locals:{invitations:@invitations, sent:@sent} , layout: false
+    render :index, locals:{invitations:@invitations, sent:@sent, appointments: @appointments} , layout: false
   end
 
   def create
@@ -14,9 +16,9 @@ class InvitationsController < ApplicationController
   end
 
   def update
-    @invitation = Invitation.find_by(mentor_id: session[:user_id])
-    @invitation[:status] = true
-    redirect_to root_url
+    @invitation = Invitation.find(params[:id])
+    @invitation.update(status: true)
+    render :json => @invitation
   end
 
   private
