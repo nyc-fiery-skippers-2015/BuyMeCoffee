@@ -26,14 +26,17 @@ app.controller('MapCtrl', function($http, $scope){
   function addMarkers(){
     $http.get('/users.json').success(function(data){
       if(data){
+        var marks = []
         for(var i=0; i<data.length; i++){
           if(data[i].latitude){
-            $scope.markers.push({lat: data[i].latitude,lng: data[i].longitude, title: data[i].name});
+            marks.push({lat: data[i].latitude,lng: data[i].longitude, title: data[i].name});
           }
         }
+        $scope.markers = marks;
+        // debugger
       }
     });
   };
   // addMarkers();
-  setInterval(addMarkers, 1000);
+  setInterval(addMarkers, 5000);
 });
