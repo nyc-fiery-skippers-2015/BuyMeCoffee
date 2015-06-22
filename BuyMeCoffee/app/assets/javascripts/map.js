@@ -35,5 +35,5 @@ app.controller('MapCtrl', function($http, $scope){
     });
   };
   // addMarkers();
-  setInterval(addMarkers, 20000);
+  setInterval(addMarkers, 1000);
 });

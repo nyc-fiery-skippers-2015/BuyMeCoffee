@@ -18,6 +18,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    @user = User.find(session[:user_id])
+    @user.update(status: false)
     session[:user_id] = nil
     redirect_to root_url
   end
