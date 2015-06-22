@@ -15,6 +15,8 @@ app.directive('googleplace', function() {
               model.$setViewValue(element.val());
           });
       });
+<<<<<<< HEAD
+=======
     }
   };
 });
