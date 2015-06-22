@@ -7,7 +7,6 @@
     <li><a href="javascript:void(0)"><%= link_to('Home', root_path) %></a></li>
     <% if session[:user_id] %>
     <li><%= link_to('Profile', user_path(session[:user_id])) %></li>
-    <li id='inbox'> <a href="javascript:void(0)">Inbox</a></li>
     <li><%=link_to 'Logout', logout_path %></li>
     <% else%>
       <li id='login'><a href="javascript:void(0)">Login</a></li>

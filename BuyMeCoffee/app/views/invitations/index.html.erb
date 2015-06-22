@@ -1,12 +1,33 @@
-<div>
-  <div id="popupContact">
-    <h1> test</h1>
+
+<!-- <div id="popupContact">
+  <div id = "messages">
     <% invitations.each do |invitation| %>
-      <div>
-        <div><%= invitation.agreed_time %></div>
-        <div><%= invitation.location %></div>
-        <div><button>Accept</button></div>
-      </div>
+      <p><%= invitation.agreed_time %></p>
+      <p><%= invitation.location %></p>
+      <button>Accept</button>
+      <% end %>
+
+   <% sent.each do |sent| %>
+    <p><%= sent.agreed_time %></p>
+    <p><%= sent.location %></p>
+    <p>sent.status</p>
     <% end %>
+</div>
+</div> -->
+
+<div id="popupContact">
+  <div class="comment">
+    <div class="comment-image">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+    </div>
+    <div class="comment-content">
+      <% invitations.each do |invitation| %>
+        <p><%= invitation.agreed_time %> <br>
+        <%= invitation.location %>
+      </P>
+        <button>Accept</button>
+        <% end %>
+    </div>
   </div>
 </div>
+
