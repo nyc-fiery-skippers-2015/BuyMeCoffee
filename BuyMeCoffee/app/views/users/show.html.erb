@@ -1,9 +1,13 @@
 <div class="userShow">
-  <h2><%= @user.name %></h2>
-
-  <p><%= @user.about %></p>
-
-  <%= @user.categories.each do |cat| %>
-      <p><%= cat %></p>
-  <% end %>
+  <h2>Name: <%= @user.name %></h2>
+  <p>About: <%= @user.about %></p>
+  <div> Skills: <% @user.skills.each do |skill| %>
+      <%= skill.name %>
+    <% end %>
+  </div>
+ <div>
+   Categories: <% @user.categories.each do |cat| %>
+      <%= cat.topic %>
+    <% end %>
+  </div>
 </div>

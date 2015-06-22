@@ -16,7 +16,14 @@
     <%= u.label :username %> <br>
     <%= u.text_field :name%>
   </p>
+   <p>
+     <%= u.collection_select(:categories, @categories, :id, :topic) %>
 
+         <p>
+           <%= u.label :skill_list, "Skills (separated by commas)" %><br/>
+           <%= u.text_field :skill_list %>
+         </p>
+   </p>
   <p>
     <%= u.label :email  %> <br>
     <%= u.text_field :email %>

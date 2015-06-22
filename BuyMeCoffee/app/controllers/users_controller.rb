@@ -19,11 +19,15 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @categories = Category.all
   end
 
   def create
+
     @new_user = User.new(user_params)
+    @category = Category.find(params[:user][:categories].to_i)
     if @new_user.save
+      @new_user.categories << @category
       session[:user_id] = @new_user.id
       redirect_to user_path(@new_user)
     else
@@ -53,6 +57,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :about, :pic_loc, :password ,:email, :linkedin )
+    params.require(:user).permit(:name, :about, :password ,:email, :linkedin, :skill_list)
   end
 end
