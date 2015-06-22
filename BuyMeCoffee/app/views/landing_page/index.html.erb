@@ -1,6 +1,6 @@
 
 
-<div ng-controller='MapCtrl'>
+<div id="toprow" ng-controller='MapCtrl'>
   <section id = "map" >
   <%= render 'map'%>
   </section>
@@ -8,8 +8,8 @@
 
 <div id="users">
   <%= render @users %>
-  <%= will_paginate @users %>
 </div>
+<%= will_paginate @users %>
 
 
 <div class="this-form"> </div>
