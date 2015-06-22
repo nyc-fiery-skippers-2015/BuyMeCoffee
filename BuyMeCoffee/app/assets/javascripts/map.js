@@ -24,15 +24,16 @@ app.controller('MapCtrl', function($http, $scope){
   $scope.markers = [];
 
   function addMarkers(){
-    $http.get('/users').success(function(data){
-      debugger
+    $http.get('/users.json').success(function(data){
       if(data){
         for(var i=0; i<data.length; i++){
-          // $scope.markers.push([{lat: data[i].latitude,lng: data[i].longitude}]);
+          if(data[i].latitude){
+            $scope.markers.push({lat: data[i].latitude,lng: data[i].longitude, title: data[i].name});
+          }
         }
       }
     });
   };
-  // setInterval(addMarkers, 2000);
   // addMarkers();
+  setInterval(addMarkers, 20000);
 });
