@@ -5,8 +5,7 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    ###hardcoded mentor right now
-    @invitation = Invitation.new(user_id: session[:user_id], mentor_id: 1, question: params[:invitation][:question], agreed_time: params[:invitation][:agreed_time], location: params[:invitation][:location])
+    @invitation = Invitation.new(user_id: session[:user_id], mentor_id: params[:invitation][:mentor_id], question: params[:invitation][:question], agreed_time: params[:invitation][:agreed_time], location: params[:invitation][:location])
     @invitation.save
     redirect_to root_url
   end
