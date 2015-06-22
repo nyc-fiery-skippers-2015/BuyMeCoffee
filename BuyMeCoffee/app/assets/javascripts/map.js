@@ -23,20 +23,33 @@ app.controller('MapCtrl', function($http, $scope){
 
   $scope.markers = [];
 
+  $scope.infoWindow = function(){
+    marker = this
+    var user = this.id
+    $http.get('/users/' + user + '' + '/card').success(function(data){
+      $scope.map.setCenter(marker.position)
+      var infowindow = new google.maps.InfoWindow()
+      infowindow.setContent(data)
+      infowindow.open($scope.map, marker)
+    })
+  };
+
   function addMarkers(){
     $http.get('/users.json').success(function(data){
       if(data){
         var marks = []
         for(var i=0; i<data.length; i++){
           if(data[i].latitude){
-            marks.push({lat: data[i].latitude,lng: data[i].longitude, title: data[i].name});
+            marks.push({lat: data[i].latitude,lng: data[i].longitude, id: data[i].id});
           }
         }
-        $scope.markers = marks;
+        if($scope.markers != marks){
+          $scope.markers = marks;
+        }
         // debugger
       }
     });
   };
-  // addMarkers();
-  setInterval(addMarkers, 5000);
+  addMarkers();
+  setInterval(addMarkers, 20000);
 });

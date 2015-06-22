@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     @user = User.includes(:categories).find(params[:id])
   end
 
+  def card
+    @user = User.find(params[:id])
+    render @user
+  end
+
   def new
     @user = User.new
   end
