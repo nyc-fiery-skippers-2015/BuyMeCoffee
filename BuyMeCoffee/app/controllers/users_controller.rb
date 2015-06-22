@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
 
   def index
-    if request.xhr?
-      @users = User.online_users
-      byebug
-    else
-      @users = User.online_users
+    @users = User.online_users
+    respond_to do |format|
+      format.html
+      format.json { render :json => @users }
     end
   end
 
