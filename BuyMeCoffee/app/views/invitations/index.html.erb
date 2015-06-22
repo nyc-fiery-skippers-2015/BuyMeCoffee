@@ -21,13 +21,25 @@
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
     </div>
     <div class="comment-content">
-      <% invitations.each do |invitation| %>
-        <p><%= invitation.agreed_time %> <br>
-        <%= invitation.location %>
-      </p>
-        <button class='inv-accept' data-id='<%= invitation.id %>'>Accept</button>
-        <div class="separate"></div>
-      <% end %>
+
+      <button id='sent'>Received</button><button id='accepted'>Accepted</button>
+      <div id='invites'>
+        <% invitations.each do |invitation| %>
+          <p><%= invitation.agreed_time %> <br>
+          <%= invitation.location %>
+        </p>
+          <button class='inv-accept' data-id='<%= invitation.id %>'>Accept</button>
+          <div class="separate"></div>
+        <% end %>
+      </div>
+        <div id='accepts'>
+        <% appointments.each do |invitation| %>
+          <p><%= invitation.agreed_time %> <br>
+          <%= invitation.location %>
+        </p>
+          <div class="separate"></div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

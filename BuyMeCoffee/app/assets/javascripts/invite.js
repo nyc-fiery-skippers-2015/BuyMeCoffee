@@ -4,7 +4,19 @@ $(document).ready(function(){
   // $('.invite').on('submit', hideForm);
   $('#login').on('click', loginForm);
   $('.par').on('click', '.inv-accept', acceptInvite);
+  $('.par').on('click', '#accepted', acceptedInvites);
+  $('.par').on('click', '#sent', sentInvites);
 });
+
+var sentInvites = function(event){
+  document.getElementById('invites').style.display = 'block';
+  document.getElementById('appoints').style.display = 'none';
+}
+
+var acceptedInvites = function(event){
+  document.getElementById('invites').style.display = 'none';
+  document.getElementById('appoints').style.display = 'block';
+}
 
 var acceptInvite = function(event){
   event.preventDefault();

@@ -23,6 +23,11 @@ app.controller('MapCtrl', function($http, $scope){
 
   $scope.markers = [];
 
+  $scope.hide = function(){
+    debugger
+    document.getElementById('invites').style.display = 'none';
+  }
+
   $scope.infoWindow = function(){
     marker = this
     var user = this.id
