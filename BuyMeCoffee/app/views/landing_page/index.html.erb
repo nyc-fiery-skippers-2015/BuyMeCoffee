@@ -10,6 +10,12 @@
       <h2>Invite</h2>
       <hr>
       <textarea name="invitation[question]" placeholder="Type Question Here!!!"></textarea>
+      <select name='invitation[agreed_time]'>
+        <option value="<%=(Time.now + 1800).strftime("%I:%M:%S")%>"><%=(Time.now + 1800).strftime("%I:%M")%></option>
+        <option value="<%=(Time.now + 2700).strftime("%I:%M:%S")%>"><%=(Time.now + 2700).strftime("%I:%M")%></option>
+        <option value="<%=(Time.now + 3600).strftime("%I:%M:%S")%>"><%=(Time.now + 3600).strftime("%I:%M")%></option>
+        <option value="<%=(Time.now + 4500).strftime("%I:%M:%S")%>"><%=(Time.now + 4500).strftime("%I:%M")%></option>
+      </select>
       <input id='submit' type='submit' value='Send Invite!' />
       <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
     </form>
