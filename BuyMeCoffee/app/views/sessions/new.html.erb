@@ -1,12 +1,12 @@
-<div ng-controller='LocationController'>
+<div>
   <div id="abc">
     <div id="popupContact">
-      <form class='invite' ng-submit='getLocation()'>
+      <form class='invite'>
         <h2>Login</h2>
         <hr>
         <input type='text' name='session[email]' placeholder='Email' />
         <input type='password' name='session[password]' placeholder='Password' />
-        <input type='submit' value='Login'/>
+        <input ng-click="getLocation()" type='submit' value='Login'/>
         <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
       </form>
     </div>
