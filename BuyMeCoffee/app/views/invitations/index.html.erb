@@ -14,33 +14,33 @@
     <% end %>
 </div>
 </div> -->
-
-<div id="popupContact">
-  <div class="comment">
-    <div class="comment-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
-    </div>
-    <div class="comment-content">
-      <button class="x-button">X</button>
-      <button id='sent'>Received</button><button id='accepted'>Accepted</button>
-      <div id='invites'>
-        <% invitations.each do |invitation| %>
-          <p><%= invitation.agreed_time %> <br>
-          <%= invitation.location %>
-        </p>
-          <button class='inv-accept' data-id='<%= invitation.id %>'>Accept</button>
-          <div class="separate"></div>
-        <% end %>
+<div id="abc">
+  <div id="popupContact">
+    <div class="comment">
+      <div class="comment-image">
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
       </div>
-        <div id='appoints' style="display:none">
-        <% appointments.each do |invitation| %>
-          <p><%= invitation.agreed_time %> <br>
-          <%= invitation.location %>
-        </p>
-          <div class="separate"></div>
-        <% end %>
+      <div class="comment-content">
+        <button class="x-button">X</button>
+        <button id='sent'>Received</button><button id='accepted'>Accepted</button>
+        <div id='invites'>
+          <% invitations.each do |invitation| %>
+            <p><%= invitation.agreed_time %> <br>
+            <%= invitation.location %>
+          </p>
+            <button class='inv-accept' data-id='<%= invitation.id %>'>Accept</button>
+            <div class="separate"></div>
+          <% end %>
+        </div>
+          <div id='appoints' style="display:none">
+          <% appointments.each do |invitation| %>
+            <p><%= invitation.agreed_time %> <br>
+            <%= invitation.location %>
+          </p>
+            <div class="separate"></div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
