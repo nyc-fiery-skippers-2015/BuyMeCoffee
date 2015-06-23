@@ -8,8 +8,8 @@
     <% if session[:user_id] %>
     <li><%= link_to('Profile', user_path(session[:user_id])) %></li>
     <li><%=link_to 'Logout', logout_path %></li>
-    <% else%>
-      <li id='login'><a href="javascript:void(0)">Login</a></li>
+    <% else %>
+      <li id='login'><a id='logging' href="javascript:void(0)">Login</a></li>
     <%end%>
   </ul>
 </nav>
