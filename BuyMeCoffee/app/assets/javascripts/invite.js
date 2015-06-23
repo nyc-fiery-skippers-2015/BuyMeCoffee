@@ -7,10 +7,11 @@ $(document).ready(function(){
   $('.par').on('click', '#sent', sentInvites);
   $('.par').on('click','.x-button', hideAllForms);
   $('.par').on('click','.x-button2', hideAllForms);
-  $('body').on('click', '#logging', hideNav);
+  // $('body').on('click', '#logging', hideNav);
 });
 
 var hideNav = function(event){
+  debugger
   $('#cupnav').remove();
 }
 
@@ -53,7 +54,9 @@ var loginForm = function(event){
     method: 'get'
 
   }).done(function(response){
+    $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
     $('.this-form').append(response)
+    document.getElementById('abc').style.display = 'block'
   }).fail(function(error){
     console.log(error)
   });
