@@ -11,20 +11,24 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
- <section id = "cupnav"> <%= render 'navbar'%> </section>
-
+<div id="fixbar">
+<section id = "cupnav">
+  <%= render 'navbar'%>
+</section>
 <% if session[:user_id] %>
-  <button id='inbox_icon'>
-    <%=image_tag 'inbox.png'%>
-  </button>
-<%else%>
-  <%=render 'signup' %>
-<%end%>
+    <button id='inbox_icon'>
+      <%=image_tag 'inbox.png'%>
+    </button>
+    <%else%>
+      <%=render 'signup' %>
+  <%end%>
+</div>
+
 
 </head>
 
 
-<body  ng-controller='MapCtrl'>
+<body  >
 
 <%= yield %>
 
