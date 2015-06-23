@@ -11,20 +11,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
-
-<section id = "nav">
-  <div id ="cup">
-    <%= render 'navbar'%>
-    <% if session[:user_id] %>
+<div id="fixbar">
+<section id = "cupnav">
+  <%= render 'navbar'%>
+</section>
+<% if session[:user_id] %>
     <button id='inbox_icon'>
       <%=image_tag 'inbox.png'%>
     </button>
     <%else%>
       <%=render 'signup' %>
   <%end%>
- </div>
-</section>
-
+</div>
 
 
 </head>

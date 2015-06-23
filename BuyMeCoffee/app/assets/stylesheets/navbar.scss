@@ -1,14 +1,20 @@
 
 
- #cup{
-   @include outer-container;
 
-   #navbutton{@includes span-columns(1);}
-   #navbutton{@includes span-columns(1);}
- }
+#cupnav{
+  @include span-columns( 10 of 12);
+ @include shift(1);
+ /* Adds shadow to the bottom of the bar */
+-webkit-box-shadow: 0px 0px 8px 0px #000000;
+-moz-box-shadow: 0px 0px 8px 0px #000000;
+box-shadow: 0px 0px 8px 0px #000000;
 
-
-
+}
+.modal-trigger{
+margin-top: 20px;
+@include span-columns( 2 of 12);
+@include shift(-2);
+}
 
 .pagination {
   display: none;
@@ -105,4 +111,5 @@
   }
 }
 
+// Based on code by Diego Eis
 
