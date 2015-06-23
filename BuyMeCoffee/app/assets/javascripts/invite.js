@@ -6,6 +6,7 @@ $(document).ready(function(){
   $('.par').on('click', '.inv-accept', acceptInvite);
   $('.par').on('click', '#accepted', acceptedInvites);
   $('.par').on('click', '#sent', sentInvites);
+  $('.par').on('click','.x-button', hideAllForms);
   $('.par').on('click','.x-button2', hideAllForms);
 });
 
