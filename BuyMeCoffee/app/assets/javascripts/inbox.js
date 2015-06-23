@@ -33,6 +33,7 @@ var inbox = function(event){
 
   }).done(function(response){
     $('.this-form').append(response)
+    document.getElementById('abc').style.display = 'block'
   }).fail(function(error){
     console.log(error)
   })

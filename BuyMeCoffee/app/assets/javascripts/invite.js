@@ -7,16 +7,14 @@ $(document).ready(function(){
   $('.par').on('click', '#sent', sentInvites);
   $('.par').on('click','.x-button', hideAllForms);
   $('.par').on('click','.x-button2', hideAllForms);
-  // $('body').on('click', '#logging', hideNav);
 });
 
-var hideNav = function(event){
-  debugger
-  $('#cupnav').remove();
-}
 
 var hideAllForms = function(event){
   this.parentElement.parentElement.parentElement.remove()
+  if(this.className === 'x-button'){
+    document.getElementById('abc').style.display = 'none'
+  }
 };
 
 var sentInvites = function(event){
