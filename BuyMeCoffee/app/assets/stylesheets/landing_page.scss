@@ -3,7 +3,6 @@
 }
 
 #side-panel {
-  @include span-columns(10);
   position: absolute;
   float: right;
   height: 100%;
@@ -13,7 +12,6 @@
 }
 
 #users {
-  @include span-columns(10);
   width: 15em;
 }
 
@@ -67,7 +65,7 @@ padding-top: 20px;
 
 .card {
    @include shift(1);
-   @include span-columns(6 of 12);
+   @include span-columns(9 of 12);
    max-width: 140px;
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
