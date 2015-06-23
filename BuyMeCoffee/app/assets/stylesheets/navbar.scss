@@ -2,7 +2,7 @@
 
 
 #cupnav{
-  @include span-columns( 10 of 12);
+  @include span-columns( 9 of 12);
  @include shift(1);
  /* Adds shadow to the bottom of the bar */
 -webkit-box-shadow: 0px 0px 8px 0px #000000;

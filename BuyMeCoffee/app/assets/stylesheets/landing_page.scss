@@ -1,20 +1,31 @@
-
-
 #toprow{
  @include outer-container(100%);
-
 }
 
-#map{
+#side-panel {
+  @include span-columns(10);
+  position: absolute;
+  float: right;
+  height: 100%;
+  overflow: scroll;
+  padding-right: -5em;
+  margin-left: 85%;
+}
 
+#users {
+  @include span-columns(10);
+  width: 15em;
+}
+
+
+#map{
   padding-top: 20px;
   padding-bottom: 20px;
-  @include span-columns(10 of 12);
+  @include span-columns(9 of 12);
    @include shift()
 }
 
 #map_canvas {
-
   height: 300px;
   width: 90%;
 }
