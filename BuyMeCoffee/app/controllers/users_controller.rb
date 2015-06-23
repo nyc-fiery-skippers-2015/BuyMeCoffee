@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def card
     @user = User.find(params[:id])
-    render @user
+    render :show, layout: false
   end
 
   def new
