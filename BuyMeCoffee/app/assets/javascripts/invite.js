@@ -6,7 +6,12 @@ $(document).ready(function(){
   $('.par').on('click', '.inv-accept', acceptInvite);
   $('.par').on('click', '#accepted', acceptedInvites);
   $('.par').on('click', '#sent', sentInvites);
+  $('.par').on('click','.x-button2', hideAllForms);
 });
+
+var hideAllForms = function(event){
+  this.parentElement.parentElement.style.display = 'none';
+}
 
 var sentInvites = function(event){
   document.getElementById('invites').style.display = 'block';
