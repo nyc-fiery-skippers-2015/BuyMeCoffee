@@ -1,3 +1,7 @@
+.cards {
+  @include span-columns(12);
+}
+
 #abc,
 #abc1 {
 width:100%;
