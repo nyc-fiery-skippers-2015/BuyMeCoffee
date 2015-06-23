@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 20150622185645) do
     t.string   "password_digest"
     t.string   "email"
     t.string   "linkedin"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "latitude"
     t.string   "longitude"
   end
