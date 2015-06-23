@@ -1,6 +1,14 @@
-#cupnav{
- @include span-columns(8 of 12);
-}
+
+
+ #cup{
+   @include outer-container;
+
+   #navbutton{@includes span-columns(1);}
+   #navbutton{@includes span-columns(1);}
+ }
+
+
+
 
 .pagination {
   display: none;
@@ -97,5 +105,4 @@
   }
 }
 
-// Based on code by Diego Eis
 
