@@ -48,7 +48,7 @@ app.controller('MapCtrl', function($http, $scope){
             marks.push({lat: data[i].latitude,lng: data[i].longitude, id: data[i].id});
           }
         }
-        if($scope.markers != marks){
+        if($scope.markers !== marks){
           $scope.markers = marks;
         }
         // debugger
