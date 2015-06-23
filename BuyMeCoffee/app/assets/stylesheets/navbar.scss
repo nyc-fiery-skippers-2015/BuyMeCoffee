@@ -2,6 +2,10 @@
  @include span-columns(8 of 12);
 }
 
+.pagination {
+  display: none;
+}
+
 #navbutton{
   background-color: white;
 }
