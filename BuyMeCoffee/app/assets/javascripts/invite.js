@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('.par').on('click','.popup', popForm);
   $('.this-form').on('submit','.invite', getUserLocation);
-  $('#login').on('click', loginForm);
+  $('#logging').on('click', loginForm);
   $('.par').on('click', '.inv-accept', acceptInvite);
   $('.par').on('click', '#accepted', acceptedInvites);
   $('.par').on('click', '#sent', sentInvites);
@@ -11,10 +11,8 @@ $(document).ready(function(){
 
 
 var hideAllForms = function(event){
-  this.parentElement.parentElement.parentElement.remove()
-  if(this.className === 'x-button'){
-    document.getElementById('abc').style.display = 'none'
-  }
+  document.getElementById('abc').style.display = 'none'
+  document.getElementById('abc1').style.display = "none";
 };
 
 var sentInvites = function(event){
