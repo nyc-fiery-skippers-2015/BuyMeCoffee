@@ -15,6 +15,11 @@ margin-top: 20px;
 @include span-columns( 2 of 12);
 @include shift(-2);
 }
+#inbox_icon{
+margin-top: 20px;
+@include span-columns( 2 of 12);
+@include shift(-2);
+}
 
 .pagination {
   display: none;
