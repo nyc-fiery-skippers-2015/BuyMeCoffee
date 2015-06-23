@@ -28,8 +28,7 @@ class UsersController < ApplicationController
     @category = Category.find(params[:user][:categories].to_i)
     if @new_user.save
       @new_user.categories << @category
-      session[:user_id] = @new_user.id
-      redirect_to user_path(@new_user)
+      redirect_to root_url
     else
       redirect_to new_user_path
     end

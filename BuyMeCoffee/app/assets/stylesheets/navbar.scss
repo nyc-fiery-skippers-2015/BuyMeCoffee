@@ -2,6 +2,7 @@
 
 
 #cupnav{
+  background-color: #98DFAF;
   @include span-columns( 9 of 12);
  @include shift(1);
  /* Adds shadow to the bottom of the bar */
@@ -11,11 +12,18 @@ box-shadow: 0px 0px 8px 0px #000000;
 
 }
 .modal-trigger{
-margin-top: 20px;
-@include span-columns( 2 of 12);
-@include shift(-2);
+  background-color: #98DFAF;
+  margin-top: 20px;
+  @include span-columns( 2 of 12);
+  @include shift(-2);
 }
+
+button#inbox_icon {
+  background-color: #98DFAF;
+}
+
 #inbox_icon{
+background-color: #98DFAF;
 margin-top: 20px;
 @include span-columns( 2 of 12);
 @include shift(-2);
@@ -35,7 +43,7 @@ margin-top: 20px;
 }
 
 #navbutton{
-  background-color: white;
+  background-color: #98DFAF;
 }
 
 .sliding-panel-content {
@@ -112,9 +120,20 @@ margin-top: 20px;
   outline: none;
 
   img {
-    height: 4em;
+    background-color: #98DFAF;
+    height: 5em;
   }
 }
 
-// Based on code by Diego Eis
+.buy-title {
+  @include shift(3.7);
+  margin-top: -1.5em;
+  background-color: #98DFAF;
+  color: #E0E0E0;
+  font-size: 3em;
+}
 
+.coffee {
+  background-color: #98DFAF;
+  color: #828E82;
+}
