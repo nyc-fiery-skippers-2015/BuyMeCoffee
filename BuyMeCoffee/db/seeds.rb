@@ -18,3 +18,15 @@ User.create(name:Faker::Name.first_name , about: Faker::Lorem.paragraph , status
 
 User.create(name:Faker::Name.first_name , about: Faker::Lorem.paragraph , status: true, password: "123" , email: Faker::Internet.email  , linkedin: "donovanholness" , latitude: "40.0000" , longitude: "127.0000" , image_url: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALkAAAAJGRmY2ViMDgxLWFjZDEtNDg4NS05YzA0LWVmOTcxZGNjNzUxYw.jpg" )
 
+
+Category.create(topic:"Hospitality and Travel")
+Category.create(topic:"Science and Pharmaceutical Research")
+Category.create(topic:"Health and Medical")
+Category.create(topic:"Retail")
+Category.create(topic:"Arts, Media and Publishing")
+Category.create(topic:"Legal")
+Category.create(topic:"Automotive")
+Category.create(topic:"Software Engineeing")
+Category.create(topic:"Marketing")
+Category.create(topic:"IT")
+
