@@ -1,14 +1,28 @@
-<%= form_for(@user) do |f| %>
+<div>
+       <%= form_for @user do |u| %>
+        <p>
+         <%= u.label :username %>
+         <%= u.text_field :name%>
+        <%= u.label :email  %>
+        <%= u.text_field :email %>
+        <%= u.label :password %>
+        <%= u.password_field :password %>
+        <a>https://www.linkedin.com/in/ YOURNAME</a>
+        <%= u.text_field :linkedin %>
+        </p>
+    <p class="modal-content">
+       <p>
+         <%= u.label :about  %>
+         <%= u.text_area :about%>
+       </p>
+       <p>
+        <a> Skill Categories</a>
+       <%= u.collection_select(:categories, @categories, :id, :topic) %>
+       <%= u.label :skill_list, "skill" %>
+       <%= u.text_field :skill_list %>
+       <%= u.submit %>
+      </p>
+    </p>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, value: @user.name %>
-
-  <%= f.label :about %>
-  <%= f.text_field :about, value: @user.about %>
-
-  <%= f.label :pic_loc %>
-  <%= f.text_field :pic_loc, value: @user.pic_loc %>
-
-  <%= f.label :email %>
-  <%= f.text_field :email, value: @user.email %>
-<% end %>
+        <%end%>
+    </div>
