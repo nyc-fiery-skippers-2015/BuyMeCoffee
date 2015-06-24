@@ -2,9 +2,9 @@ $(document).ready(function() {
   $('.this-form').on('click','.rating', submitRating);
   $('.par').on('click','.popup1', ratingForm);
   $('body').on('click', 'button.x-button3', function(event){
-      document.getElementById('abc2').style.display = "none";
+      document.getElementById('abc2').remove()
   });
-  $('.this-form').on('click', ".dropdown-button", function() {
+  $('body').on('click', ".dropdown-button", function() {
     var $button, $menu;
     $button = $(this);
     $menu = $button.siblings(".dropdown-menu");
@@ -29,6 +29,7 @@ var ratingForm = function(event){
     dataType: 'html'
 
   }).done(function(response){
+    $('.flash-error').remove()
     $('.this-form').append(response);
     document.getElementById('abc2').style.display = "block";
   }).fail(function(error){
@@ -48,8 +49,9 @@ var submitRating = function(event){
     data: myData
 
   }).done(function(response){
-    document.getElementById('abc2').style.display = "none";
-    location.reload()
+    document.getElementById('abc2').remove()
+    $('.par').append(response);
+    location.reload();
   }).fail(function(error){
     console.log(error);
   });
