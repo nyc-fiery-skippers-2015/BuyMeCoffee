@@ -1,7 +1,12 @@
 <div class="userShow">
   <h2>Name: <%= @user.name %></h2>
   <div>
-    <img src="<%= @user.image_url %>" style='height:10em;width:10em;'/>
+
+     <% if  @user.image_url%>
+      <img src="<%= @user.image_url %>"   style='height:10em;width:10em;'/>
+       <% else %>
+      <img src="<%= gravatar_url(@user.email,60)%>" %>
+     <% end %>
     About: <%= @user.about %>
   </div>
   <div> Skills: <% @user.skills.each do |skill| %>
