@@ -22,11 +22,11 @@
       </div>
       <div class="comment-content">
         <button class="x-button">X</button>
-        <button id='sent'>Received</button><button id='accepted'>Accepted</button>
+        <button id='sent'>Received</button>   <button id='accepted'>Accepted</button>
         <div id='invites'>
           <% invitations.each do |invitation| %>
-            <p><%= invitation.agreed_time %> <br>
-            <%= invitation.location %>
+            <p>Time: <%= invitation.agreed_time %> <br>
+            Location: <%= invitation.location %>
           </p>
             <button class='inv-accept' data-id='<%= invitation.id %>'>Accept</button>
             <div class="separate"></div>
@@ -34,8 +34,8 @@
         </div>
           <div id='appoints' style="display:none">
           <% appointments.each do |invitation| %>
-            <p><%= invitation.agreed_time %> <br>
-            <%= invitation.location %>
+            <p>Time: <%= invitation.agreed_time %> <br>
+            Location: <%= invitation.location %>
           </p>
             <div class="separate"></div>
           <% end %>

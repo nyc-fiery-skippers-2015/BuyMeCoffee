@@ -7,12 +7,11 @@
   float: right;
   height: 100%;
   overflow: scroll;
-  padding-right: -5em;
-  margin-left: 85%;
+  margin-left: 83%;
 }
 
 #users {
-  width: 15em;
+  @include span-columns(12);
 }
 
 
@@ -69,8 +68,7 @@ padding-top: 20px;
 
 .card {
    @include shift(1);
-   @include span-columns(9 of 12);
-   max-width: 140px;
+   @include span-columns(10 of 12);
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
   $base-background-color: white !default;
@@ -93,7 +91,7 @@ padding-top: 20px;
   background-color: $card-background;
   border-radius: $base-border-radius;
   border: $card-border;
-  box-shadow: 0px 0px 8px 0px #000000;
+  box-shadow: 0px 0px 15px 0px #000000;
   cursor: pointer;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
