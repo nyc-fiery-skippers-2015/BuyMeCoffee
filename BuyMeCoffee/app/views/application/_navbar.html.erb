@@ -6,13 +6,11 @@
   <ul>
     <li><a href="javascript:void(0)"><%= link_to('Home', root_path) %></a></li>
     <% if session[:user_id] %>
-    <li id='inbox_icon'><a href='#'><%=image_tag 'new_inbox.png', id: 'inbox_nav'%></a></li>
+      <li id='inbox_icon'><a href='#'><%=image_tag 'new_inbox.png', id: 'inbox_nav'%><% if @invitations %><%=image_tag 'new.png', id: 'notify'%><%end%></a></li>
     <li><%= link_to('Profile', user_path(session[:user_id])) %></li>
     <li><%=link_to 'Logout', logout_path %></li>
     <% else %>
-    <label for="modal-1">
-      <li class="modal-trigger"><a href='#'>Sign Up!</a><li>
-      </label>
+      <li class="modal-trigger"><a class="modal-trigger" href='#'>Sign Up!</a><li>
       <li id='logging'><a href="javascript:void(0)">Login</a></li>
     <%end%>
   </ul>
