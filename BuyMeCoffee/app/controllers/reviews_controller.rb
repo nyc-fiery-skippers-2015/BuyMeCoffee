@@ -8,9 +8,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user])
     @review = Review.new(rating: params[:rating], author_id: session[:user_id], user_id: params[:user])
+    @rating = @user.rating(@user.id)
     if @review.save
-      render :show
+      render @user, layout: false
     end
   end
 end
