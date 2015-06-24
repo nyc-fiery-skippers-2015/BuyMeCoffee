@@ -49,7 +49,7 @@ var submitRating = function(event){
 
   }).done(function(response){
     document.getElementById('abc2').style.display = "none";
-    debugger
+    location.reload()
   }).fail(function(error){
     console.log(error);
   });

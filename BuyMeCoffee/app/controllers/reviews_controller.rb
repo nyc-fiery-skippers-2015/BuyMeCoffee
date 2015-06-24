@@ -9,8 +9,8 @@ class ReviewsController < ApplicationController
 
   def create
     @user = User.find(params[:user])
-    @review = Review.new(rating: params[:rating], author_id: session[:user_id], user_id: params[:user])
-    @rating = @user.rating(@user.id)
+    @review = Review.new(rating: params[:rating], author_id: session[:user_id], mentor_id: params[:user])
+    @rating = @user.rating
     if @review.save
       render @user, layout: false
     end

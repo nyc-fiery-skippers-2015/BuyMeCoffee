@@ -2,8 +2,11 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :skills
   has_and_belongs_to_many :categories
-  belongs_to :review
-  has_many :reviews, foreign_key: 'author_id'
+  # belongs_to :review
+
+  has_many :reviews, foreign_key: 'mentor_id'
+  has_many :authored_reviews, foreign_key: 'author_id', class_name: 'Review'
+
   has_many :invitations
   has_many :invitations, foreign_key: 'mentor_id'
 
@@ -16,11 +19,8 @@ class User < ActiveRecord::Base
     User.includes(:categories).where(status: true)
   end
 
-  def rating(input)
-    ratings = Review.where(user_id: input).pluck(:rating).reduce(&:+)
-    if ratings
-      rating =  ratings / Review.where(user_id: input).pluck(:rating).length
-    end
+  def rating
+    reviews.average(:rating)
   end
 
 
