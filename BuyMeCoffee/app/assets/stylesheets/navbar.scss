@@ -1,28 +1,20 @@
-
-
-
 #cupnav{
-  background-color: #98DFAF;
-  @include span-columns( 9 of 12);
+  position: relative;
+  z-index: 800;
+  margin-bottom: 20px;
+
+  @include span-columns( 6 of 12);
  @include shift(1);
  /* Adds shadow to the bottom of the bar */
--webkit-box-shadow: 0px 0px 8px 0px #000000;
--moz-box-shadow: 0px 0px 8px 0px #000000;
-box-shadow: 0px 0px 8px 0px #000000;
+/*-webkit-box-shadow: 0px 0px 8px 0px #000000;*/
+/*-moz-box-shadow: 0px 0px 8px 0px #000000;*/
+/*box-shadow: 0px 0px 8px 0px #000000;*/
 
-}
-.modal-trigger{
-  background-color: #98DFAF;
-  margin-top: 20px;
-  @include span-columns( 2 of 12);
-  @include shift(-2);
-}
-
-button#inbox_icon {
-  background-color: #98DFAF;
 }
 
 #inbox_icon{
+  position:relative;
+z-index: 1200;
 background-color: #98DFAF;
 margin-top: 20px;
 @include span-columns( 2 of 12);
@@ -44,6 +36,7 @@ margin-top: 20px;
 
 #navbutton{
   background-color: #98DFAF;
+  box-shadow: 0px 0px 8px 0px #000000;
 }
 
 .sliding-panel-content {
@@ -126,14 +119,10 @@ margin-top: 20px;
 }
 
 .buy-title {
-  @include shift(3.7);
-  margin-top: -1.5em;
-  background-color: #98DFAF;
-  color: #E0E0E0;
+  z-index: 10001;
+  position: absolute;
+  @include shift(2.5);
+  margin-top: -1.7em;
+  text-shadow: 2px 2px #000000;
   font-size: 3em;
-}
-
-.coffee {
-  background-color: #98DFAF;
-  color: #828E82;
 }

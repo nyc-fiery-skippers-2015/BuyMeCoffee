@@ -1,5 +1,9 @@
 $(document).ready(function(){
   $('#inbox_icon').on('click', inbox);
+  $('.modal-trigger').on('click', function(){
+    $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
+    $('#modal-1').prop('checked', true)
+  })
 
 $(function() {
   $("#modal-1").on("change", function() {

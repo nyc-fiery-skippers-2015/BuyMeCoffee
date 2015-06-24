@@ -121,9 +121,7 @@ button#inbox_icon {
     display: none;
   }
 
-  .modal-trigger {
-    padding: 0.8em 1em;
-  }
+
 
   .modal-fade-screen { // overlay
     @include transition(opacity 0.25s ease);

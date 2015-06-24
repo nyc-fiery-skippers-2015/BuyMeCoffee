@@ -3,7 +3,7 @@ class LandingPageController < ApplicationController
 
   @user = User.new
   @categories = Category.all
-  @users = User.online_users.page(params[:page]).per_page(1)
+  @users = User.online_users.page(params[:page]).per_page(5)
  end
 
 
