@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :invitations, only: [:create, :update, :index]
+  resources :reviews, only: [:new, :create, :show]
 
   get 'welcome/index'
   get '/users/:id/card' => 'users#card'

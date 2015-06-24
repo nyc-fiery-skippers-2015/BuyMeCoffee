@@ -1,9 +1,28 @@
+.popup{
+  margin-left: -.2em;
+}
+
+.popup1 {
+  margin-left: -.2em;
+  margin-top: .2em;
+}
+
 .cards {
   @include span-columns(12);
 }
 
+#rater {
+  margin-top: 10em;
+  @include shift(5)
+}
+
+#x-button3{
+  @include shift(4)
+}
+
 #abc,
-#abc1 {
+#abc1,
+#abc2 {
 z-index: 1500;
 width:100%;
 height:100%;
@@ -21,7 +40,8 @@ right:-14px;
 top:-14px;
 cursor:pointer
 }
-div#popupContact {
+div#popupContact,
+div#popupContact1 {
 position:absolute;
 left:50%;
 top:17%;

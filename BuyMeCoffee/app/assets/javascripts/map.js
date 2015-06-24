@@ -33,7 +33,7 @@ app.controller('MapCtrl', function($http, $scope){
     var user = this.id
     $http.get('/users/' + user + '/card').success(function(data){
       var infowindow = new google.maps.InfoWindow({ maxWidth: 400 })
-      infowindow.setContent("<div class='info-window'> " + data + '<button id=' + user + "" + ' class=popup>Invite</button>' + '</div>')
+      infowindow.setContent("<div class='info-window'> " + data + '<button id=' + user + "" + ' class=popup>Invite</button>' + '</div>' + '<button data-id=' + user + ' class=popup1>Rate Me!</button></div>')
       infowindow.open($scope.map, marker)
     })
   };

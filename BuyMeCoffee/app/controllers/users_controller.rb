@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.online_users
+    @users = User.online_users.includes(:reviews)
     respond_to do |format|
       format.html
       format.json { render :json => @users }
@@ -10,10 +10,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.includes(:categories).find(params[:id])
+    @rating = @user.rating
   end
 
   def card
     @user = User.find(params[:id])
+    @rating = @user.rating
     render :show, layout: false
   end
 
