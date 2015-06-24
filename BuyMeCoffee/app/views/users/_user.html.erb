@@ -1,6 +1,10 @@
 <div class="cards">
   <div class="card">
+     <% if  user.image_url%>
       <img src="<%= user.image_url %>"/>
+       <% else %>
+      <img src="<%= gravatar_url(user.email,100)%>"%>
+     <% end %>
     <div class="card-header">
         <%=user.name%>
     </div>
