@@ -52,9 +52,11 @@ class UsersController < ApplicationController
   end
 
   def pos
-    @user = User.find(session[:user_id])
-    @user.update(latitude: params[:latitude], longitude: params[:longitude])
-    render :json => @user
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+      @user.update(latitude: params[:latitude], longitude: params[:longitude])
+      render :json => @user
+    end
   end
 
   def destroy

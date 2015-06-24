@@ -98,17 +98,20 @@ var savePos = function(user, position){
 var getUserLocation = function(event){
   event.preventDefault();
   var $target = $(event.target);
-  var userInput = $target.serialize();
-  navigator.geolocation.getCurrentPosition(function(position){
-    savePos(userInput, position)
-  });
+  userInput = $target.serialize();
+  navigator.geolocation.watchPosition(success, failure, { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 })
 };
 
+var failure = function(error){
+  console.log(error)
+}
+
+var success = function(position){
+    savePos(userInput, position)
+};
 var popForm = function(event){
   event.preventDefault();
   $target = $(event.target);
   $('.user').val($target.attr('id'))
   document.getElementById('abc1').style.display = "block";
 };
-
-setInterval(updateUserLocation(), 10000)
