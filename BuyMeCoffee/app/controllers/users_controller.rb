@@ -28,8 +28,7 @@ class UsersController < ApplicationController
     @category = Category.find(params[:user][:categories].to_i)
     if @new_user.save
       @new_user.categories << @category
-      session[:user_id] = @new_user.id
-      redirect_to user_path(@new_user)
+      redirect_to root_url
     else
       redirect_to new_user_path
     end
@@ -40,11 +39,23 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to @user
+    if params[:id] == 'pos'
+      pos
     else
-      redirect_to edit_user_path
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        redirect_to @user
+      else
+        redirect_to edit_user_path
+      end
+    end
+  end
+
+  def pos
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+      @user.update(latitude: params[:latitude], longitude: params[:longitude])
+      render :json => @user
     end
   end
 
@@ -57,6 +68,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :about, :password ,:email, :linkedin, :skill_list)
+    params.require(:user).permit(:name, :about, :password ,:email, :linkedin, :skill_list,:latitude, :longitude)
   end
 end

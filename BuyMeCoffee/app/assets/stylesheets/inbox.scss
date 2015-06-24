@@ -13,8 +13,9 @@
 }
 
 button#inbox_icon {
-    background-color: white;
+    background-color: #98DFAF;
     img {
+      background-color: #98DFAF;
         height: 3em;
     }
 }
@@ -120,9 +121,7 @@ button#inbox_icon {
     display: none;
   }
 
-  .modal-trigger {
-    padding: 0.8em 1em;
-  }
+
 
   .modal-fade-screen { // overlay
     @include transition(opacity 0.25s ease);
@@ -175,8 +174,8 @@ button#inbox_icon {
     @include transition(opacity 0.25s ease);
     background: $modal-background;
     border-radius: $base-border-radius;
-    margin-top: 0;
-    margin: auto;
+    /*margin-top: -10em;*/
+    margin: -5em auto auto auto;
     max-height: 95%;
     overflow: auto;
     padding: $modal-padding / 2;
@@ -184,7 +183,7 @@ button#inbox_icon {
     width: 95%;
 
     @include media($medium-screen) {
-      max-height: 70%;
+      max-height: 100%;
       padding: $modal-padding;
       width: 60%;
     }

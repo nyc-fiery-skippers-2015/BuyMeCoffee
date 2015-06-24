@@ -1,28 +1,15 @@
-
-
-
-#cupnav{
-  @include span-columns( 9 of 12);
- @include shift(1);
- /* Adds shadow to the bottom of the bar */
--webkit-box-shadow: 0px 0px 8px 0px #000000;
--moz-box-shadow: 0px 0px 8px 0px #000000;
-box-shadow: 0px 0px 8px 0px #000000;
-
-}
-.modal-trigger{
-margin-top: 20px;
-@include span-columns( 2 of 12);
-@include shift(-2);
-}
-#inbox_icon{
-margin-top: 20px;
-@include span-columns( 2 of 12);
-@include shift(-2);
+#inbox_nav{
+  margin-top: -1em;
+  width: 2em;
+  height: 1.5em;
 }
 
 .pagination {
   display: none;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .x-button2 {
@@ -35,7 +22,10 @@ margin-top: 20px;
 }
 
 #navbutton{
-  background-color: white;
+  @include shift(.7);
+  z-index: 800;
+  background-color: #98DFAF;
+  box-shadow: 0px 0px 8px 0px #000000;
 }
 
 .sliding-panel-content {
@@ -112,9 +102,25 @@ margin-top: 20px;
   outline: none;
 
   img {
-    height: 4em;
+    background-color: #98DFAF;
+    height: 5em;
   }
 }
 
-// Based on code by Diego Eis
+#notify {
+  left: 0;
+  right: 0;
+  bottom: 1em;
+  top: 0em;
+  height: 2em;
+}
 
+.buy-title {
+  @include span-columns(3);
+  z-index: 10001;
+  position: absolute;
+  @include shift(2.15);
+  margin-top: -2.5em;
+  text-shadow: 3px 3px 3px #000000;
+  font-size: 3em;
+}

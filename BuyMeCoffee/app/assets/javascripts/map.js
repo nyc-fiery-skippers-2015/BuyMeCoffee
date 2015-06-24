@@ -32,7 +32,6 @@ app.controller('MapCtrl', function($http, $scope){
     marker = this
     var user = this.id
     $http.get('/users/' + user + '/card').success(function(data){
-      $scope.map.setCenter(marker.position)
       var infowindow = new google.maps.InfoWindow({ maxWidth: 400 })
       infowindow.setContent("<div class='info-window'> " + data + '<button id=' + user + "" + ' class=popup>Invite</button>' + '</div>')
       infowindow.open($scope.map, marker)

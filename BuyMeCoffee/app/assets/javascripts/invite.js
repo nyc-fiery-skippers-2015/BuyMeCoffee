@@ -11,8 +11,9 @@ $(document).ready(function(){
 
 
 var hideAllForms = function(event){
-  document.getElementById('abc').style.display = 'none'
   document.getElementById('abc1').style.display = "none";
+  event.preventDefault();
+  document.getElementById('abc').style.display = 'none';
 };
 
 var sentInvites = function(event){
@@ -58,6 +59,28 @@ var loginForm = function(event){
   });
 };
 
+var updatePos = function(position){
+  var posData = $.param(position.coords)
+
+  $.ajax({
+    url: '/users/pos',
+    method: 'patch',
+    data: posData,
+    dataType: 'json'
+
+  }).done(function(response){
+    console.log('success');
+  }).fail(function(error){
+    console.log(error);
+  });
+};
+
+var updateUserLocation = function(){
+  navigator.geolocation.watchPosition(function(position){
+    updatePos(position)
+  });
+};
+
 var savePos = function(user, position){
   var myData = user + '&' + $.param(position.coords)
 
@@ -75,12 +98,17 @@ var savePos = function(user, position){
 var getUserLocation = function(event){
   event.preventDefault();
   var $target = $(event.target);
-  var userInput = $target.serialize();
-  navigator.geolocation.getCurrentPosition(function(position){
-    savePos(userInput, position)
-  });
+  userInput = $target.serialize();
+  navigator.geolocation.watchPosition(success, failure, { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 })
 };
 
+var failure = function(error){
+  console.log(error)
+}
+
+var success = function(position){
+    savePos(userInput, position)
+};
 var popForm = function(event){
   event.preventDefault();
   $target = $(event.target);
