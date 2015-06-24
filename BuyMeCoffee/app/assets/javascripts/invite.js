@@ -11,7 +11,6 @@ $(document).ready(function(){
 
 
 var hideAllForms = function(event){
-  debugger
   document.getElementById('abc1').style.display = "none";
   event.preventDefault();
   document.getElementById('abc').style.display = 'none';
