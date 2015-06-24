@@ -23,7 +23,7 @@
        <p>
         <a> Skill Categories</a>
        <%= u.collection_select(:categories, @categories, :id, :topic) %>
-       <%= u.label :skill_list, "skill1,skill2,skill3" %>
+       <%= u.label :skill_list, "skill" %>
        <%= u.text_field :skill_list %>
        <%= u.submit %>
       </p>
