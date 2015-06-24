@@ -37,6 +37,7 @@ var inbox = function(event){
 
   }).done(function(response){
     $('.this-form').append(response)
+    $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
     document.getElementById('abc').style.display = 'block'
   }).fail(function(error){
     console.log(error)
