@@ -34,7 +34,7 @@
   $action-color: #477DCA !default;
   $dark-gray: #333 !default;
   $sliding-panel-border-color: $dark-gray;
-  $sliding-panel-background: lighten($sliding-panel-border-color, 5%);
+  $sliding-panel-background:  rgba(34,34,34,0.75);
   $sliding-panel-color: #fff;
   $sliding-panel-border: 1px solid $sliding-panel-border-color;
   $sliding-panel-background-hover: $action-color;
@@ -61,7 +61,7 @@
 
   li a {
     border-bottom: $sliding-panel-border;
-    color: $sliding-panel-color;
+    color: #98DFAF;
     display: block;
     font-weight: bold;
     padding: 1em;
@@ -72,7 +72,7 @@
     }
 
     &:hover {
-      background-color: $sliding-panel-background-hover;
+      background-color: #7C5EAA;
       color: $sliding-panel-color-hover;
     }
   }
