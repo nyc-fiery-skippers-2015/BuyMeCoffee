@@ -26,6 +26,8 @@
   z-index: 800;
   background-color: #98DFAF;
   box-shadow: 0px 0px 8px 0px #000000;
+  width: 7em;
+  height: 7em;
 }
 
 .sliding-panel-content {
@@ -102,8 +104,11 @@
   outline: none;
 
   img {
-    background-color: #98DFAF;
-    height: 5em;
+  position: absolute;
+  margin-left: -1.1em;
+  margin-top: -3.6em;
+  height: 80%;
+  -webkit-filter: invert(100%);
   }
 }
 
@@ -116,11 +121,24 @@
 }
 
 .buy-title {
+  /*color: #FFFFFB;
   @include span-columns(3);
   z-index: 10001;
   position: absolute;
   @include shift(2.15);
   margin-top: -2.5em;
-  text-shadow: 3px 3px 3px #000000;
-  font-size: 3em;
+  /*text-shadow: 3px 3px 3px #000000;*/
+/*  font-size: 3em;*/
+
+   /* font-size: 3em; */
+  position: absolute;
+  margin-left: 64px;
+  font-size: 32px;
+  margin-top: -109px;
+  color: #FFFFFB;
+  z-index: 10000;
+  font-size: 29px;
+  width: 7%;
+  color: white;
+
 }
