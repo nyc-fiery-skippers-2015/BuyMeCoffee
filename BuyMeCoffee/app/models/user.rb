@@ -16,6 +16,13 @@ class User < ActiveRecord::Base
     User.includes(:categories).where(status: true)
   end
 
+  def rating(input)
+    ratings = Review.where(user_id: input).pluck(:rating).reduce(&:+)
+    if ratings
+      rating =  ratings / Review.where(user_id: input).pluck(:rating).length
+    end
+  end
+
 
   def skill_list
     self.skills.collect do |skill|

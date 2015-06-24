@@ -10,10 +10,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.includes(:categories).find(params[:id])
+    @rating = @user.rating(@user.id)
   end
 
   def card
     @user = User.find(params[:id])
+    @rating = @user.rating(@user.id)
     render :show, layout: false
   end
 
