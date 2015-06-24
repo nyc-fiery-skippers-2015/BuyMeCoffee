@@ -11,8 +11,10 @@ $(document).ready(function(){
 
 
 var hideAllForms = function(event){
-  document.getElementById('abc').style.display = 'none'
+  debugger
   document.getElementById('abc1').style.display = "none";
+  event.preventDefault();
+  document.getElementById('abc').style.display = 'none';
 };
 
 var sentInvites = function(event){

@@ -2,6 +2,11 @@
  @include outer-container(100%);
 }
 
+.pac-container {
+  position: absolute;
+  z-index: 20000;
+}
+
 #side-panel {
   position: absolute;
   float: right;
