@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'logout'  => 'sessions#destroy'
   get 'signup', to: 'users#new', as: :signup
   post 'signup' => 'users#create'
-
+  patch '/users/pos' => 'users#pos'
   root 'landing_page#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

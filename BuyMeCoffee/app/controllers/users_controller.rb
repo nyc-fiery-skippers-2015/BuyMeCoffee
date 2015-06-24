@@ -39,12 +39,22 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to @user
+    if params[:id] == 'pos'
+      pos
     else
-      redirect_to edit_user_path
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        redirect_to @user
+      else
+        redirect_to edit_user_path
+      end
     end
+  end
+
+  def pos
+    @user = User.find(session[:user_id])
+    @user.update(latitude: params[:latitude], longitude: params[:longitude])
+    render :json => @user
   end
 
   def destroy
@@ -56,6 +66,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :about, :password ,:email, :linkedin, :skill_list)
+    params.require(:user).permit(:name, :about, :password ,:email, :linkedin, :skill_list,:latitude, :longitude)
   end
 end

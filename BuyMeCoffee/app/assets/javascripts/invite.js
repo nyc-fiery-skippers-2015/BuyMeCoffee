@@ -59,6 +59,28 @@ var loginForm = function(event){
   });
 };
 
+var updatePos = function(position){
+  var posData = $.param(position.coords)
+
+  $.ajax({
+    url: '/users/pos',
+    method: 'patch',
+    data: posData,
+    dataType: 'json'
+
+  }).done(function(response){
+    console.log('success');
+  }).fail(function(error){
+    console.log(error);
+  });
+};
+
+var updateUserLocation = function(){
+  navigator.geolocation.watchPosition(function(position){
+    updatePos(position)
+  });
+};
+
 var savePos = function(user, position){
   var myData = user + '&' + $.param(position.coords)
 
@@ -88,3 +110,5 @@ var popForm = function(event){
   $('.user').val($target.attr('id'))
   document.getElementById('abc1').style.display = "block";
 };
+
+setInterval(updateUserLocation(), 10000)
