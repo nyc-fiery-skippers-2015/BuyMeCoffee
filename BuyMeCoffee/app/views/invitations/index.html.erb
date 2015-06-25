@@ -21,27 +21,26 @@
 
       </div>
       <div class="comment-content">
-        <button class="x-button">X</button>
-        <button id='sent'>Received</button>   <button id='accepted'>Accepted</button>
+        <div class='button-switch'><button id='sent'>Received</button>   <button id='accepted'>Accepted</button><button class="x-button message">X</button></div>
         <div id='invites'>
           <% invitations.each do |invitation| %>
-            <div>Question: <%= invitation.question %></div>
-            <p>Time: <%= invitation.agreed_time %> <br>
-            Location: <%= invitation.location %><br>
-            <div>From: <%= invitation.user.name %></div>
+          <div class="separate"></div>
+            <p><span class='messages'>From: </span><%= invitation.user.name %><br>
+            <span class='messages'>Time: </span><%= invitation.agreed_time %></p>
+            <div><span class='messages'>Question: </span><%= invitation.question %></div>
+            <p><span class='messages'>Location: </span><%= invitation.location %></p>
           </p>
             <button class='inv-accept' data-id='<%= invitation.id %>'>Accept</button>
-            <div class="separate"></div>
           <% end %>
         </div>
           <div id='appoints' style="display:none">
           <% appointments.each do |invitation| %>
-            <div>Question: <%= invitation.question %></div>
-            <p>Time: <%= invitation.agreed_time %> <br>
-            Location: <%= invitation.location %><br>
-            <div>From: <%= invitation.user.name %></div>
+          <div class="separate"></div>
+            <p><span class='messages'>From: </span><%= invitation.user.name %><br>
+            <span class='messages'>Time: </span><%= invitation.agreed_time %></p>
+            <div><span class='messages'>Question: </span><%= invitation.question %></div>
+            <p><span class='messages'>Location: </span><%= invitation.location %></p>
           </p>
-            <div class="separate"></div>
           <% end %>
         </div>
       </div>

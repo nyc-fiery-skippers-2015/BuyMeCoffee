@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
       @review = Review.new(rating: params[:rating], author_id: session[:user_id], mentor_id: params[:user])
       @rating = @user.rating
       if @review.save
-        render :json => @user
+        render :json => {rating: @user.rating, id: @user.id }
       else
         render :error, layout: false
       end
