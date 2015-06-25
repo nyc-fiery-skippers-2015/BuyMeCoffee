@@ -1,6 +1,14 @@
 class InvitationsController < ApplicationController
 
-  def index    
+  def new
+    if session[:user_id]
+      render :json => { good: 'togo'}
+    else
+      render :'landing_page/error', layout: false
+    end
+  end
+
+  def index
     invitations = Invitation.where(mentor_id: session[:user_id], status: false)
     accepted = Invitation.where(mentor_id: session[:user_id], status: true)
     sent_accepted = Invitation.where(user_id: session[:user_id], status: true)
@@ -10,9 +18,13 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    invitation = Invitation.new(user_id: session[:user_id], mentor_id: params[:invitation][:mentor_id], question: params[:invitation][:question], agreed_time: params[:invitation][:agreed_time], location: params[:invitation][:location])
-    invitation.save
-    redirect_to root_url
+    if session[:user_id]
+      invitation = Invitation.new(user_id: session[:user_id], mentor_id: params[:invitation][:mentor_id], question: params[:invitation][:question], agreed_time: params[:invitation][:agreed_time], location: params[:invitation][:location])
+      invitation.save
+      redirect_to root_url
+    else
+      render :'landing_page/error', layout: false
+    end
   end
 
   def update
