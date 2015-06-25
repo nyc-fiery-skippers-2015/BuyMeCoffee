@@ -32,6 +32,7 @@ app.controller('MapCtrl', function($http, $scope){
     marker = this
     var user = this.id
     $http.get('/users/' + user + '/card').success(function(data){
+      $scope.map.setCenter(marker.position)
       var infowindow = new google.maps.InfoWindow({ maxWidth: 400 })
       infowindow.setContent("<div class='info-window'> " + data + '<button id=' + user + "" + ' class=popup>Invite</button>' + '</div>' + '<button data-id=' + user + ' class=popup1>Rate Me!</button></div>')
       infowindow.open($scope.map, marker)
@@ -50,7 +51,6 @@ app.controller('MapCtrl', function($http, $scope){
         if($scope.markers !== marks){
           $scope.markers = marks;
         }
-        // debugger
       }
     });
   };
