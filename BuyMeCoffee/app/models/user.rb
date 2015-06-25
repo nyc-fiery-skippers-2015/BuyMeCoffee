@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def rating
-    reviews.average(:rating)
+    reviews.average(:rating).to_i
   end
 
 
