@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $('.this-form').on('click','.rating', submitRating);
+  $('map').on('click', removeError);
   $('.par').on('click','.popup1', ratingForm);
   $('body').on('click', 'button.x-button3', function(event){
       $('.flash-error').remove()
@@ -16,6 +17,10 @@ $(document).ready(function() {
     });
   });
 });
+
+var removeError = function(event){
+  $('.flash-error').remove()
+}
 
 
 var ratingForm = function(event){
@@ -51,9 +56,8 @@ var submitRating = function(event){
 
   }).done(function(response){
     $('.' + response.id).text('Rating: ' + response.rating)
-    // document.getElementById('abc2').remove()
+    document.getElementById('abc2').remove()
     $('.par').append(response);
-    // location.reload();
   }).fail(function(error){
     console.log(error);
   });

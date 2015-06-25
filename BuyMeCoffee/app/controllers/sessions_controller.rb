@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       @user.update(latitude: params[:latitude], longitude: params[:longitude], status: true)
       session[:user_id] = @user.id
-      redirect_to root_url
+      render :json => @user
     else
-      render :error,layout: false
+      render :error, layout: false
     end
   end
 
