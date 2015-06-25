@@ -51,7 +51,7 @@ var submitRating = function(event){
   }).done(function(response){
     document.getElementById('abc2').remove()
     $('.par').append(response);
-    location.reload();
+    // location.reload();
   }).fail(function(error){
     console.log(error);
   });

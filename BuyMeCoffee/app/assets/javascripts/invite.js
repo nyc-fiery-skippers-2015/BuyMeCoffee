@@ -112,6 +112,19 @@ var success = function(position){
 var popForm = function(event){
   event.preventDefault();
   $target = $(event.target);
-  $('.user').val($target.attr('id'))
-  document.getElementById('abc1').style.display = "block";
+  $.ajax({
+    url: '/invitations/new',
+    method: 'get',
+
+  }).done(function(response){
+    if(response.good === 'togo'){
+      $('.user').val($target.attr('id'));
+      document.getElementById('abc1').style.display = "block";
+    } else{
+      $('.this-form').append(response);
+    }
+  }).fail(function(error){
+    console.log(error);
+  });
+
 };
