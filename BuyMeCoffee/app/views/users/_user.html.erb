@@ -9,7 +9,7 @@
         <%=user.name%><br>
     </div>
     <div class="card-copy">
-      <p>Rating: <%= user.rating %></p>
+      <p class='<%= user.id   %>'>Rating: <%= user.rating %></p>
       <p> skills: styling and profiling</p>
       <div><button id='<%= user.id %>' class='popup'>Invite</button>
       <button data-id='<%= user.id %>' class='popup1'>Rate Me!</button></div>

@@ -49,6 +49,7 @@ var submitRating = function(event){
     data: myData
 
   }).done(function(response){
+    $('.' + response.id).text('Rating: ' + response.rating)
     document.getElementById('abc2').remove()
     $('.par').append(response);
     // location.reload();

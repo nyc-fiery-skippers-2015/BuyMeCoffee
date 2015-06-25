@@ -1,5 +1,5 @@
 <div ng-controller='MapCtrl'>
-  <map center="40.7105, -74.0089" zoom="12" style='height:600px;width:100%'>
+  <map center="40.7105, -74.0089" zoom="12" style='height:650px;width:100%'>
     <marker position="[{{marker.lat}},{{marker.lng}}]" ng-repeat='marker in markers' data-id="{{marker.id}}" on-click='infoWindow()'></marker>
   </map>
 </div>
