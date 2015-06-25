@@ -25,10 +25,10 @@
         <div id='invites'>
           <% invitations.each do |invitation| %>
           <div class="separate"></div>
+            <p><span class='messages'>From: </span><%= invitation.user.name %><br>
+            <span class='messages'>Time: </span><%= invitation.agreed_time %></p>
             <div><span class='messages'>Question: </span><%= invitation.question %></div>
-            <p><span class='messages'>Time: </span><%= invitation.agreed_time %></p>
             <p><span class='messages'>Location: </span><%= invitation.location %></p>
-            <div><span class='messages'>From: </span><%= invitation.user.name %></div>
           </p>
             <button class='inv-accept' data-id='<%= invitation.id %>'>Accept</button>
           <% end %>
@@ -36,10 +36,10 @@
           <div id='appoints' style="display:none">
           <% appointments.each do |invitation| %>
           <div class="separate"></div>
+            <p><span class='messages'>From: </span><%= invitation.user.name %><br>
+            <span class='messages'>Time: </span><%= invitation.agreed_time %></p>
             <div><span class='messages'>Question: </span><%= invitation.question %></div>
-            <p><span class='messages'>Time: </span><%= invitation.agreed_time %></p>
             <p><span class='messages'>Location: </span><%= invitation.location %></p>
-            <div><span class='messages'>From: </span><%= invitation.user.name %></div>
           </p>
           <% end %>
         </div>

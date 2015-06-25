@@ -11,9 +11,10 @@ $(document).ready(function(){
 
 
 var hideAllForms = function(event){
-  document.getElementById('abc1').style.display = "none";
+  $('.flash-error').remove();
+  $('#abc').remove();
   event.preventDefault();
-  document.getElementById('abc').style.display = 'none';
+  document.getElementById('abc1').style.display = 'none';
 };
 
 var sentInvites = function(event){
@@ -89,7 +90,8 @@ var savePos = function(user, position){
     method: 'post',
     data: myData
   }).done(function(response){
-    location.reload();
+    $('.this-form').append(response)
+    location.reload()
   }).fail(function(error){
     console.log(error)
   });
@@ -99,7 +101,7 @@ var getUserLocation = function(event){
   event.preventDefault();
   var $target = $(event.target);
   userInput = $target.serialize();
-  navigator.geolocation.watchPosition(success, failure, { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 })
+  navigator.geolocation.watchPosition(success, failure, { enableHighAccuracy: true, timeout: 10000, maximumAge: 10000 })
 };
 
 var failure = function(error){
