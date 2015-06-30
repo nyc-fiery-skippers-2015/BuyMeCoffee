@@ -9,10 +9,13 @@
     <% if session[:user_id] %>
       <li id='inbox_icon'><a href='#'><%=image_tag 'images.jpg', id: 'inbox_nav'%><% if @invitations %><%=image_tag 'new.png', id: 'notify'%><%end%></a></li>
     <li><a href="#">Edit</a></li>
+     <li><a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a></li>
     <li><%=link_to 'Logout', logout_path %></li>
     <% else %>
-      <li class="modal-trigger"><a class="modal-trigger" href='#'>Sign Up!</a><li>
-      <li id='logging'><a href="javascript:void(0)">Login</a></li>
+    <li class="modal-trigger"><a class="modal-trigger" href='#'>Sign Up!</a><li>
+    <li id='logging'><a href="javascript:void(0)">Login</a></li>
+
+
     <%end%>
   </ul>
 </nav>

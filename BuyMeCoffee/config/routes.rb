@@ -14,6 +14,15 @@ Rails.application.routes.draw do
   post 'signup' => 'users#create'
   patch '/users/pos' => 'users#pos'
   root 'landing_page#index'
+resources :linkedin
+get '/linkedin_profile' =>  "linkedin#linkedin_profile"
+get '/oauth_account' => "linkedin#oauth_account"
+get '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url'
+
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

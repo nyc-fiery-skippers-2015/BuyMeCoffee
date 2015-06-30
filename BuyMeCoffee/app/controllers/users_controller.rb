@@ -65,7 +65,9 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+     @link_id = LinkedinOauthSetting.find_by_user_id(params[:id])
     @user.destroy
+    @link_id.destroy
     redirect_to @users
   end
 
