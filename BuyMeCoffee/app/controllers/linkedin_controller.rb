@@ -7,12 +7,9 @@ class LinkedinController < ApplicationController
   }
 
 
-
-
-
-  def index
+def index
     unless LinkedinOauthSetting.find_by_user_id(session[:user_id]).nil?
-      redirect_to "/linkedin_profile"
+     redirect_to user_path(current_user)
     end
   end
 
@@ -29,7 +26,7 @@ class LinkedinController < ApplicationController
       atoken, asecret = client.authorize_from_request(session[:rtoken], session[:rsecret], pin)
       LinkedinOauthSetting.create!(:asecret => asecret, :atoken => atoken, :user_id => session[:user_id] )
     end
-    redirect_to "/linkedin_profile"
+    redirect_to user_path(id: session[:user_id])
   end
 
   def generate_linkedin_oauth_url
