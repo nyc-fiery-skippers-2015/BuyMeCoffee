@@ -1,12 +1,14 @@
 <div class="cards">
   <div class="card">
-     <% if  user.image_url%>
-      <img src="<%= user.image_url %>"/>
-       <% else %>
-      <img src="<%= gravatar_url(user.email,100)%>"%>
-     <% end %>
+     <% if user.basic_profile   %>
+      <img src="<%= user.basic_profile.picture_url  %>"/>
+     <% elsif user.image_url %>
+        <img src="<%= user.image_url %>"/>
+      <% elsif user.image_url==nil && user.basic_profile == nil %>
+        <img src="<%= gravatar_url(user.email,60)%>" %>
+      <% end %>
     <div class="card-header">
-        <%=user.name%><br>
+       <%=link_to "#{user.name}", user_path(user) %> <br>
     </div>
     <div class="card-copy">
       <p class='<%= user.id   %>'>Rating: <%= user.rating %></p>
@@ -16,3 +18,4 @@
     </div>
   </div>
 </div>
+
