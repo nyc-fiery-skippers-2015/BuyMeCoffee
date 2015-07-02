@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :about, presence: true
 
+  has_one :basic_profile
+  has_one :linkedin_oauth_settin
+
 
 
   def self.online_users

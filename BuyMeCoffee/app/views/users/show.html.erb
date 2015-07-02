@@ -1,16 +1,22 @@
 <div class="userShow">
-  <h2>Name: <%= @user.name %></h2>
-  <div>
-     <% if  @user.image_url%>
-      <img src="<%= @user.image_url %>"   style='height:10em;width:10em;'/>
-       <% else %>
-      <img src="<%= gravatar_url(@user.email,60)%>" %>
-     <% end %>
-    Rating: <%= @rating %><br>
-    About: <%= @user.about %>
+<div>
+    <% if @user.basic_profile  %>
+      <img src="<%= @user.basic_profile.picture_url  %>"/>
+     <% elsif @user.image_url %>
+        <img src="<%= @user.image_url %>"/>
+      <% elsif @user.image_url==nil && @user.basic_profile == nil %>
+        <img src="<%= gravatar_url(@user.email,60)%>" %>
+      <% end %>
+    <h2>Name: <%= @user.name %></h2>
+    <p>Rating: <%= @rating %><p>
+    <p> About: <%= @user.about %><p>
   </div>
   <div> Skills: <% @user.skills.each do |skill| %>
       <%= skill.name %>
     <% end %>
+    <%if current_user.id == @user.id%>
+     <li><%=link_to 'Edit Profile',edit_user_path(current_user) %></li>
+     <li><a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a></li>
+     <%end%>
   </div>
 </div>
