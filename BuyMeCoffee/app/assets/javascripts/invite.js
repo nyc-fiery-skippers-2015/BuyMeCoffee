@@ -1,8 +1,7 @@
 $(document).ready(function(){
   $('.par').on('click','.popup', popForm);
   $('.this-form').on('submit','.invite', getUserLocation);
-  $('#logging').on('click', loginForm);
-  $('.par').on('click', '.inv-accept', acceptInvite);
+ $('.par').on('click', '.inv-accept', acceptInvite);
   $('.par').on('click', '#accepted', acceptedInvites);
   $('.par').on('click', '#sent', sentInvites);
   $('.par').on('click','.x-button', hideAllForms);
