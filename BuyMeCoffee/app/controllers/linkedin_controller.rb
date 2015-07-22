@@ -21,7 +21,7 @@ def index
   def oauth_account
      @current_user = User.find(session[:user_id])
       # keys need to be added
-    client = LinkedIn::Client.new('', '', @@config)
+    client = LinkedIn::Client.new('77mq4feex7uxw7', 'CVF1DvzYJA8b7E77', @@config)
     pin = params[:oauth_verifier]
     if pin
       atoken, asecret = client.authorize_from_request(session[:rtoken], session[:rsecret], pin)
